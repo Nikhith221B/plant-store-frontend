@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# 🌿 Mini Plant Store – Urvann Internship Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a full-stack web application where users can browse, search, and filter through a catalog of plants, and admins can add new plants to the collection.
 
-## Available Scripts
+## 🔗 Live Links
 
-In the project directory, you can run:
+- **Frontend**: [View Site](https://plant-store-frontend.onrender.com)
+- **Backend API**: [Render API](https://plant-store-backend.onrender.com)
+- **GitHub Repo**: [GitHub – Frontend](https://github.com/Nikhith221B/plant-store-frontend)
 
-### `npm start`
+- **Github Repo**: [Github - Backend](https://github.com/Nikhith221B/plant-store-backend)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Features
 
-### `npm test`
+### ✅ User Features
+- View all plants in a responsive grid
+- Search by name or category keyword (case-insensitive)
+- Filter by category (Indoor, Outdoor, Succulent, etc.)
+- See stock availability and pricing
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🛠️ Admin Features
+- Add new plant with name, price, multiple categories, and stock toggle
+- Input validation before submission
 
-### `npm run build`
+### 📦 Backend
+- Built with **Node.js + Express**
+- Stores data in **MongoDB Atlas**
+- API: `GET /plants`, `POST /plants`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🧪 Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Frontend**: ReactJS, Axios
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB Atlas
+- **Deployment**: Render
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📌 Notes
+- Sample database seeded with 50+ realistic plants
+- Loading and error states handled gracefully
+- Mobile-first responsive design using basic CSS
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 👨‍💻 Author
+**Nagireddy** – [GitHub Profile](https://github.com/Nikhith221B)
