@@ -18,7 +18,7 @@ const About = () => {
             </h2>
 
             <p style={{ fontSize: '16px', marginBottom: '30px', color: '#333' }}>
-                This is a full-stack web application built as part of an internship assignment for <strong>Urvann</strong>.
+                This is a full-stack web application.
                 It allows users to browse, filter, and search a catalog of plants, while authenticated admins can add new plants to the system.
             </p>
 
@@ -33,7 +33,7 @@ const About = () => {
 
             <h3 style={{ fontSize: '20px', color: '#1b4332', margin: '30px 0 12px' }}>👨‍💻 Developer</h3>
             <p style={{ fontSize: '16px', color: '#333' }}>
-                Developed by <strong>Nagi</strong> as part of a software development internship task.
+                Developed by <strong>Nagi</strong> as part of a software development task.
                 <br />
                 GitHub: <a href="https://github.com/Nikhith221B" target="_blank" rel="noreferrer" style={{ color: '#1d3557' }}>
                     github.com/Nikhith221B
