@@ -24,9 +24,14 @@ const Navbar = ({ user, setUser }) => {
                 <Link to="/" style={{ color: 'white', textDecoration: 'none', marginRight: '20px' }}>
                     🌿 Mini Plant Store
                 </Link>
-                <Link to="/admin" style={{ color: 'white', textDecoration: 'none', marginRight: '15px' }}>
-                    Add Plant
+                <Link to="/catalog" style={{ color: 'white', textDecoration: 'none', marginRight: '15px' }}>
+                    Catalog
                 </Link>
+                {user?.isAdmin && (
+                    <Link to="/admin" style={{ color: 'white', textDecoration: 'none', marginRight: '15px' }}>
+                        Add Plant
+                    </Link>
+                )}
                 <Link to="/about" style={{ color: 'white', textDecoration: 'none' }}>
                     About
                 </Link>

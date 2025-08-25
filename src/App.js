@@ -7,9 +7,11 @@ import AddPlantForm from './components/AddPlantForm';
 import Loader from './components/Loader';
 import ErrorState from './components/ErrorState';
 import Login from './pages/Login';
-import Navbar from './components/Navbar';
-import About from './pages/About';
 import Register from './pages/Register';
+import About from './pages/About';
+import Navbar from './components/Navbar';
+import Catalog from './pages/Catalog';
+import Home from './pages/Home';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 function App() {
@@ -20,13 +22,11 @@ function App() {
     const [error, setError] = useState('');
     const [user, setUser] = useState(null);
 
-    // Fetch user from localStorage (on mount)
     useEffect(() => {
         const storedUser = localStorage.getItem('user');
         if (storedUser) setUser(JSON.parse(storedUser));
     }, []);
 
-    // Fetch plants
     const loadPlants = async () => {
         setLoading(true);
         try {
@@ -54,56 +54,27 @@ function App() {
 
     const categories = [...new Set(plants.flatMap(p => p.categories))];
 
-    // Main Catalog Page
-    const CatalogPage = () => (
-        <div>
-            <h1>Mini Plant Store 🌿</h1>
-
-            {loading ? (
-                <Loader />
-            ) : error ? (
-                <ErrorState message={error} />
-            ) : (
-                <>
-                    <div style={{ marginBottom: '20px' }}>
-                        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-                        <FilterDropdown
-                            selectedCategory={selectedCategory}
-                            setSelectedCategory={setSelectedCategory}
-                            categories={categories}
-                        />
-                    </div>
-
-                    <div style={{
-                        display: 'flex',
-                        flexWrap: 'wrap',
-                        justifyContent: 'flex-start'
-                    }}>
-                        {plants.length > 0 ? (
-                            plants.map(plant => (
-                                <PlantCard
-                                    key={plant._id}
-                                    name={plant.name}
-                                    price={plant.price}
-                                    categories={plant.categories}
-                                    inStock={plant.inStock}
-                                />
-                            ))
-                        ) : (
-                            <p>No matching plants found.</p>
-                        )}
-                    </div>
-                </>
-            )}
-        </div>
-    );
-
     return (
         <Router>
             <Navbar user={user} setUser={setUser} />
             <Routes>
-                <Route path="/" element={<CatalogPage />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/catalog" element={
+                    <Catalog
+                        user={user}
+                        plants={plants}
+                        loading={loading}
+                        error={error}
+                        searchTerm={searchTerm}
+                        setSearchTerm={setSearchTerm}
+                        selectedCategory={selectedCategory}
+                        setSelectedCategory={setSelectedCategory}
+                        categories={categories}
+                    />
+                } />
                 <Route path="/login" element={<Login setUser={setUser} />} />
+                <Route path="/register" element={<Register setUser={setUser} />} />
+                <Route path="/about" element={<About />} />
                 <Route path="/admin" element={
                     user && user.isAdmin ? (
                         <AddPlantForm onAdd={handleAddPlant} />
@@ -113,8 +84,6 @@ function App() {
                         <Navigate to="/login" />
                     )
                 } />
-                <Route path="/about" element={<About />} />
-                <Route path="/register" element={<Register setUser={setUser} />} />
             </Routes>
         </Router>
     );
