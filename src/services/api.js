@@ -1,23 +1,26 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://plant-store-backend-gjoh.onrender.com';
+// const BASE_URL = 'https://plant-store-backend-gjoh.onrender.com';
+const BASE_URL = 'http://localhost:5000';
+
+const api = axios.create({
+    baseURL: BASE_URL,
+});
+
+api.interceptors.request.use((config) => {
+    const token = localStorage.getItem('token');
+    if (token) config.headers.Authorization = `Bearer ${token}`;
+    return config;
+});
 
 export const fetchPlants = async (search = '', category = '') => {
-    try {
-        const response = await axios.get(`${BASE_URL}/plants`, {
-            params: { search, category },
-        });
-        return response.data;
-    } catch (error) {
-        throw new Error('Failed to fetch plants');
-    }
+    const res = await api.get('/plants', { params: { search, category } });
+    return res.data;
 };
 
-export const createPlant = async (plantData) => {
-    try {
-        const response = await axios.post(`${BASE_URL}/plants`, plantData);
-        return response.data;
-    } catch (error) {
-        throw new Error('Failed to add plant');
-    }
+export const addPlant = async (data) => {
+    const res = await api.post('/plants', data);
+    return res.data;
 };
+
+export default api;
