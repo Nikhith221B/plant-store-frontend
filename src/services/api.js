@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-// const BASE_URL = 'https://plant-store-backend-gjoh.onrender.com';
-const BASE_URL = 'http://localhost:5000';
+const BASE_URL = 'https://plant-store-frontend-n39j.onrender.com';
 
 const api = axios.create({
     baseURL: BASE_URL,

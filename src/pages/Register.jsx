@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const BASE_URL = 'http://localhost:5000';
+const BASE_URL = 'https://plant-store-backend-gjoh.onrender.com';
 
 const Register = ({ setUser }) => {
     const [form, setForm] = useState({
